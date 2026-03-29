@@ -213,7 +213,7 @@ export default function ServicesPage() {
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/contact"
+                href="/hire-me"
                 className="rounded-full bg-gradient-to-r from-[#81ecff] via-[#bf81ff] to-[#669dff] px-8 py-4 font-bold text-[#005762] transition-transform duration-300 hover:scale-105"
               >
                 Let&apos;s Talk

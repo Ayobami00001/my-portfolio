@@ -73,7 +73,7 @@ export default function Navbar() {
               href="/hire-me"
               className="whitespace-nowrap rounded-full bg-gradient-to-r from-[#81ecff] via-[#bf81ff] to-[#669dff] px-4 py-2 text-sm font-bold text-[#005762] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(129,236,255,0.3)] lg:px-6"
             >
-              Hire Me
+                Contact Me
             </Link>
           </div>
 
@@ -146,7 +146,7 @@ export default function Navbar() {
                   href="/hire-me"
                   className="mt-3 flex items-center justify-center rounded-full bg-gradient-to-r from-[#81ecff] via-[#bf81ff] to-[#669dff] px-6 py-3 font-bold text-[#005762] transition-all duration-300 hover:scale-[1.02]"
                 >
-                  Hire Me
+                  Contact Me
                 </Link>
               </nav>
             </motion.div>

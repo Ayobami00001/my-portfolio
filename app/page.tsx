@@ -97,7 +97,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/hire-me"
               className="rounded-full border border-[#46484d]/20 bg-[rgba(35,38,44,0.6)] px-8 py-4 font-extrabold text-[#f6f6fc] backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:bg-[#23262c]"
             >
               Contact Me
@@ -392,7 +392,7 @@ export default function Home() {
 
           <div className="flex flex-col justify-center gap-6 sm:flex-row">
             <Link
-              href="/contact"
+              href="/hire-me"
               className="flex items-center justify-center gap-3 rounded-full bg-[#f6f6fc] px-10 py-5 font-black text-[#0c0e12] transition-all duration-300 hover:scale-105"
             >
               Let&apos;s Work Together <span>→</span>
