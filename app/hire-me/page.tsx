@@ -1,8 +1,63 @@
 "use client";
+import {useState} from "react";
 
 import { motion } from "framer-motion";
 
 export default function HirePage() {
+
+    const [form, setForm] = useState({
+  name: "",
+  email: "",
+  company: "",
+  projectType: "",
+  subject: "",
+  message: "",
+});
+
+const [loading, setLoading] = useState(false);
+const [status, setStatus] = useState("");
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  setForm({ ...form, [e.target.name]: e.target.value });
+};
+
+   const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setStatus("");
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setStatus("Message sent successfully.");
+      setForm({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      setStatus(data.message);
+    }
+  } catch {
+    setStatus("Something went wrong.");
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <main className="relative overflow-x-hidden bg-[#0c0e12] text-[#f6f6fc]">
 
@@ -35,7 +90,7 @@ export default function HirePage() {
               </h1>
 
               <p className="text-[#aaabb0] text-lg mt-6 max-w-lg leading-relaxed">
-                I'm always open to collaborations, freelance projects, or
+                I am always open to collaborations, freelance projects, or
                 discussions about building modern web applications. If you have
                 an idea, project, or opportunity, feel free to reach out.
               </p>
@@ -116,48 +171,80 @@ export default function HirePage() {
             className="bg-[#23262c]/60 p-10 rounded-2xl border border-[#46484d]/20 backdrop-blur-xl"
           >
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
 
               <div className="grid md:grid-cols-2 gap-4">
                 <input
+                 name="name"
+                 value={form.name}
+                 onChange={handleChange}
                   placeholder="Your Name"
                   className="w-full px-5 py-4 rounded-lg bg-[#171a1f] border border-[#46484d]/20 outline-none focus:border-[#81ecff]"
+                  required
                 />
 
                 <input
+                 name="email"
+                 type="email"
+                 value={form.email}
+                 onChange={handleChange}
+
                   placeholder="Email Address"
                   className="w-full px-5 py-4 rounded-lg bg-[#171a1f] border border-[#46484d]/20 outline-none focus:border-[#81ecff]"
+                    required
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
                 <input
+                  name="company"
+                  value={form.company}
+                  onChange={handleChange}
                   placeholder="Company / Organization"
                   className="w-full px-5 py-4 rounded-lg bg-[#171a1f] border border-[#46484d]/20 outline-none focus:border-[#81ecff]"
+                  
                 />
 
                 <input
+                  name="projectType"
+                  value={form.projectType}
+                  onChange={handleChange}
                   placeholder="Project Type"
                   className="w-full px-5 py-4 rounded-lg bg-[#171a1f] border border-[#46484d]/20 outline-none focus:border-[#81ecff]"
+                  
                 />
               </div>
 
               <input
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
                 placeholder="Subject"
                 className="w-full px-5 py-4 rounded-lg bg-[#171a1f] border border-[#46484d]/20 outline-none focus:border-[#81ecff]"
               />
 
               <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 rows={5}
                 placeholder="Tell me about your project..."
                 className="w-full px-5 py-4 rounded-lg bg-[#171a1f] border border-[#46484d]/20 outline-none resize-none focus:border-[#81ecff]"
+                required
               />
 
               <button
-                className="w-full bg-gradient-to-r from-[#81ecff] via-[#bf81ff] to-[#669dff] py-5 rounded-full font-bold text-[#005762] hover:scale-[1.02] transition"
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-[#81ecff] via-[#bf81ff] to-[#669dff] py-5 rounded-full font-bold text-[#005762] transition hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
+                {status && (
+                    <p className={`text-center mt-4 ${status.includes("successfully") ? "text-green-500" : "text-red-500"}`}>
+                      {status}
+                    </p>
+                  )}
 
             </form>
 
