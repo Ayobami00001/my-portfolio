@@ -2,7 +2,28 @@
 
 import { motion } from "framer-motion";
 
-const caseStudies = [
+type Accent = "cyan" | "purple" | "blue" | "pink";
+
+type CaseStudy = {
+  title: string;
+  project: string;
+  status: string;
+  accent: Accent;
+  challenge: string;
+  solution: string;
+  takeaway: string;
+  icon: string;
+};
+
+type TimelineStep = {
+  phase: string;
+  time: string;
+  title: string;
+  text: string;
+  accent: Accent;
+};
+
+const caseStudies: CaseStudy[] = [
   {
     title: "Authentication & Route Protection",
     project: "DevFaruq Clothing E-Commerce",
@@ -83,7 +104,7 @@ const caseStudies = [
   },
 ];
 
-const timeline = [
+const timeline: TimelineStep[] = [
   {
     phase: "The Problem",
     time: "Step 1",
@@ -114,64 +135,50 @@ const timeline = [
   },
 ];
 
-const accentStyles = {
+const accentStyles: Record<
+  Accent,
+  {
+    badge: string;
+    glow: string;
+    iconBox: string;
+    titleHover: string;
+    border: string;
+    dot: string;
+  }
+> = {
   cyan: {
-    badge:
-      "border-[#81ecff]/20 bg-[#81ecff]/10 text-[#81ecff]",
-    glow:
-      "hover:shadow-[0_0_40px_rgba(129,236,255,0.10)]",
-    iconBox:
-      "bg-[#81ecff]/10 text-[#81ecff]",
-    titleHover:
-      "group-hover:text-[#81ecff]",
-    border:
-      "border-l-[#81ecff]",
-    dot:
-      "bg-[#81ecff] shadow-[0_0_18px_rgba(129,236,255,0.55)]",
+    badge: "border-[#81ecff]/20 bg-[#81ecff]/10 text-[#81ecff]",
+    glow: "hover:shadow-[0_0_40px_rgba(129,236,255,0.10)]",
+    iconBox: "bg-[#81ecff]/10 text-[#81ecff]",
+    titleHover: "group-hover:text-[#81ecff]",
+    border: "border-l-[#81ecff]",
+    dot: "bg-[#81ecff] shadow-[0_0_18px_rgba(129,236,255,0.55)]",
   },
   purple: {
-    badge:
-      "border-[#bf81ff]/20 bg-[#bf81ff]/10 text-[#bf81ff]",
-    glow:
-      "hover:shadow-[0_0_40px_rgba(191,129,255,0.10)]",
-    iconBox:
-      "bg-[#bf81ff]/10 text-[#bf81ff]",
-    titleHover:
-      "group-hover:text-[#bf81ff]",
-    border:
-      "border-l-[#bf81ff]",
-    dot:
-      "bg-[#bf81ff] shadow-[0_0_18px_rgba(191,129,255,0.55)]",
+    badge: "border-[#bf81ff]/20 bg-[#bf81ff]/10 text-[#bf81ff]",
+    glow: "hover:shadow-[0_0_40px_rgba(191,129,255,0.10)]",
+    iconBox: "bg-[#bf81ff]/10 text-[#bf81ff]",
+    titleHover: "group-hover:text-[#bf81ff]",
+    border: "border-l-[#bf81ff]",
+    dot: "bg-[#bf81ff] shadow-[0_0_18px_rgba(191,129,255,0.55)]",
   },
   blue: {
-    badge:
-      "border-[#669dff]/20 bg-[#669dff]/10 text-[#669dff]",
-    glow:
-      "hover:shadow-[0_0_40px_rgba(102,157,255,0.10)]",
-    iconBox:
-      "bg-[#669dff]/10 text-[#669dff]",
-    titleHover:
-      "group-hover:text-[#669dff]",
-    border:
-      "border-l-[#669dff]",
-    dot:
-      "bg-[#669dff] shadow-[0_0_18px_rgba(102,157,255,0.55)]",
+    badge: "border-[#669dff]/20 bg-[#669dff]/10 text-[#669dff]",
+    glow: "hover:shadow-[0_0_40px_rgba(102,157,255,0.10)]",
+    iconBox: "bg-[#669dff]/10 text-[#669dff]",
+    titleHover: "group-hover:text-[#669dff]",
+    border: "border-l-[#669dff]",
+    dot: "bg-[#669dff] shadow-[0_0_18px_rgba(102,157,255,0.55)]",
   },
   pink: {
-    badge:
-      "border-pink-400/20 bg-pink-400/10 text-pink-300",
-    glow:
-      "hover:shadow-[0_0_40px_rgba(244,114,182,0.10)]",
-    iconBox:
-      "bg-pink-400/10 text-pink-300",
-    titleHover:
-      "group-hover:text-pink-300",
-    border:
-      "border-l-pink-300",
-    dot:
-      "bg-pink-300 shadow-[0_0_18px_rgba(244,114,182,0.55)]",
+    badge: "border-pink-400/20 bg-pink-400/10 text-pink-300",
+    glow: "hover:shadow-[0_0_40px_rgba(244,114,182,0.10)]",
+    iconBox: "bg-pink-400/10 text-pink-300",
+    titleHover: "group-hover:text-pink-300",
+    border: "border-l-pink-300",
+    dot: "bg-pink-300 shadow-[0_0_18px_rgba(244,114,182,0.55)]",
   },
-} as const;
+};
 
 export default function CaseStudiesPage() {
   return (
