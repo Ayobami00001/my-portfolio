@@ -8,13 +8,13 @@ const projects = [
     name: "Todo List",
     type: "Frontend Project",
     description:
-      "A daily planning application where users can organize tasks using four input fields. It was built to practice form handling, state management, and building useful interactive interfaces for everyday productivity.",
+      "A task management application designed to help users organize daily activities efficiently. Built to practice form handling, state management, and interactive UI development.",
     technologies: ["React", "JavaScript", "CSS", "Vercel"],
     live: "https://todo-list-five-gamma-36.vercel.app/",
     github: "https://github.com/Ayobami00001/Todo-list",
-    featured: true,
+    featured: false,
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAqrqdZKrET0zOvfP_WkqAApSA8FrXupYgOl8vVg5hTduwSa0IcpPSwfLwGjheLEHO3b4uJt3M2TqE_e8P-523MFARBqqpg-FtcXg5exjTYPm_a3wKF2sslqrh_1beEhVYtvXIhrzgr84uvwuUOIbpZJSNzBB8gqGXg5j3mWZ_lSBTJxMY8io-bGea7OMao4FaSpKSI2CaX4_If7b0CIyXKrfbzzXUMpKTssUEl5KBCyGg1hVTS_xfBw3q2oSHARU67HLkfrJmdWIb4",
+      "https://res.cloudinary.com/dyzdckuxi/image/upload/v1775162152/Screenshot_from_2026-04-02_21-35-27_kfntgz.png",
   },
   {
     name: "Love Calculator",
@@ -26,7 +26,7 @@ const projects = [
     github: "https://github.com/Ayobami00001/my-love",
     featured: false,
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBiESv7GthixUDQ0gzFu0pDEQLIaco59cvy2i3ip4ZNlEbWwpyqfskd0JocxhTW3y4RBxSTs6Jssjwp6Q3dN1dGP_emN459YdPge5wLw9ky04NOJhP3Ulz-Z6AknJsxbEwK4y3aE4vNWTr9Vs--DRe5rkjIT7j3Um5oe_HKP7_D76oi03er2fRXcFSY-myJkJdDcH1Qn0_RBWZtCHA5QfSXd0MD2KiCmLR9cmmMGaR-s9DZjZL3QviZQ1wwOW0y1rCSCv1oJT_MhndV",
+      "https://res.cloudinary.com/dyzdckuxi/image/upload/v1775161714/Screenshot_from_2026-04-02_21-27-48_gxr5u9.png",
   },
   {
     name: "My Printivo Clone",
@@ -34,12 +34,47 @@ const projects = [
     description:
       "A frontend clone of the Printivo interface created during my level one learning stage. This project helped me improve my layout skills, styling accuracy, and ability to recreate real-world website interfaces.",
     technologies: ["HTML", "CSS", "JavaScript", "Frontend Practice"],
-    live: "",
+    live: "https://my-printivo.vercel.app",
     github: "https://github.com/Ayobami00001/my-printivo",
     featured: false,
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD-m716JH-HhU_XN2ZwwV7vbxr7YJD1PIiKH841igRhvi62mh3NlYCAEvnI0OuWSE2zE4HKr9yjGW7wTceBpECGRh4iwmY1klxwBXtcPGWtW4flcnjQOuIriiiON1cOllorXG21md76DRCumU-4M-EaOTlQdQMNTnwaI6J9pGMcFJIkN683o0_n8_s-uqSkCYHcF8Lw-tVaFmsXiZbRQ5RKPMc9NBfc2Xn6UiOWVCLmJPg0iHPv_i22VB6xhbkqkzQDYfeqwSpWA9F1",
+      "https://res.cloudinary.com/dyzdckuxi/image/upload/v1775162000/Screenshot_from_2026-04-02_21-32-45_qs3n3h.png",
   },
+  {
+  name: "DevFaruq Clothing Store",
+  type: "Full-Stack E-Commerce",
+  description:
+    "A full-stack clothing e-commerce platform with a client-facing store, admin dashboard, and backend API. Users can browse products, add to cart, and interact with a modern UI, while admins manage products and inventory through a dedicated dashboard.",
+  technologies: [
+    "React",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT",
+    "Cloudinary",
+  ],
+  live: "https://clothing-store-by-devfaruq.vercel.app",
+  github: "https://github.com/Ayobami00001/Clothing-Store.git",
+  featured: true,
+  image: "https://res.cloudinary.com/dyzdckuxi/image/upload/v1775161468/Screenshot_from_2026-04-02_21-22-30_flikiz.png",
+},
+{
+  name: "DevFaruq Portfolio",
+  type: "Personal Portfolio",
+  description:
+    "A modern developer portfolio built with Next.js and Tailwind CSS to showcase my projects, skills, and experience. It features smooth animations, responsive design, and a clean UI focused on user experience.",
+  technologies: [
+    "Next.js",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Vercel",
+  ],
+  live: "https://my-portfolio-pink-one-68.vercel.app",
+  github: "https://github.com/Ayobami00001/my-portfolio.git",
+  featured: false,
+  image: "https://res.cloudinary.com/dyzdckuxi/image/upload/v1775162879/Screenshot_from_2026-04-02_21-47-38_pmxkcy.png",
+},
 ];
 
 export default function ProjectsPage() {
