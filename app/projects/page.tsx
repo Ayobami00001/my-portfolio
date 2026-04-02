@@ -69,6 +69,7 @@ const projects = [
     "Tailwind CSS",
     "Framer Motion",
     "Vercel",
+    "Typescript",
   ],
   live: "https://my-portfolio-pink-one-68.vercel.app",
   github: "https://github.com/Ayobami00001/my-portfolio.git",
