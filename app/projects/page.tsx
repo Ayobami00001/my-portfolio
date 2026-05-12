@@ -71,7 +71,7 @@ const projects = [
     "Vercel",
     "Typescript",
   ],
-  live: "https://my-portfolio-pink-one-68.vercel.app",
+  live: "https://ibrahimfaruq-portfolio.vercel.app",
   github: "https://github.com/Ayobami00001/my-portfolio.git",
   featured: false,
   image: "https://res.cloudinary.com/dyzdckuxi/image/upload/v1775162879/Screenshot_from_2026-04-02_21-47-38_pmxkcy.png",
